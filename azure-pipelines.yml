@@ -11,8 +11,8 @@ jobs:
       runOnce:
         deploy:
           steps:
-           - script: echo Hello, world!
-             displayName: 'Run a one-line script'
+           - script: echo kubectl get pods
+             displayName: 'Getting pod details'
            - task: Kubernetes@1
              displayName: 'kubectl get'
              inputs:
