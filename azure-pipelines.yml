@@ -14,7 +14,7 @@ stages:
 - stage: Test
   dependsOn: Build
   jobs: 
-  - deployment: 
+  - deployment: deployWeb
     environment: smarthotel360-test.abc-fe88
     pool: default
     strategy:
@@ -32,7 +32,7 @@ stages:
 - stage: staging
   dependsOn: Test
   jobs:
-    - deployment: 
+    - deployment: deployWeb
       environment: smarthotel360-staging.abc-fe88
       pool: prodpool
       strategy:
