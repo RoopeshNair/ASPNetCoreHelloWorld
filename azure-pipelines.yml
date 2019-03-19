@@ -5,7 +5,7 @@
 
 jobs:
   - deployment: Aksjob
-    environment: smarthotel360-test
+    environment: smarthotel360-test.abc-fe88
     pool: prodpool
     strategy:
       runOnce:
@@ -13,3 +13,9 @@ jobs:
           steps:
            - script: echo Hello, world!
              displayName: 'Run a one-line script'
+           - task: Kubernetes@1
+             displayName: 'kubectl get'
+             inputs:
+              namespace: 'abc-fe88'
+              command: get
+              arguments: pods
